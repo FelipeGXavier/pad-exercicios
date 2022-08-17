@@ -1,14 +1,14 @@
 package ex1.find_name;
 
+import util.UtilReader;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class ConcurrentFinder extends Finder{
+public class ConcurrentFinder extends Finder {
     @Override
     public List<FindResult> find(String name) {
         List<FindResult> result = new ArrayList<>();
