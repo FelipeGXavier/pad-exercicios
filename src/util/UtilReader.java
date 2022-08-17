@@ -31,7 +31,14 @@ abstract public class UtilReader {
                 .collect(Collectors.toList());
     }
 
-    public static void writeFileTo(String filename, List<String> content) {
-
+    public static void writeFileTo(String filename, List<String> content) throws IOException {
+        File fout = new File(filename);
+        FileOutputStream fos = new FileOutputStream(fout);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+        for (String line : content) {
+            bw.write(line);
+            bw.newLine();
+        }
+        bw.close();
     }
 }

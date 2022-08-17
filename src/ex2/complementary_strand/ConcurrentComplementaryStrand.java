@@ -3,6 +3,7 @@ package ex2.complementary_strand;
 import ex1.find_name.FindResult;
 import util.UtilReader;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -23,7 +24,11 @@ public class ConcurrentComplementaryStrand extends ComplementaryStrand{
                     String[] nucleotides = currentTape.split("");
                     complementaryTape.add(this.getComplementaryStrand(nucleotides));
                 }
-                UtilReader.writeFileTo(outDir + "/" + fileName, complementaryTape);
+                try {
+                    UtilReader.writeFileTo(outDir + "/" + fileName, complementaryTape);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             });
         }
         executor.shutdown();

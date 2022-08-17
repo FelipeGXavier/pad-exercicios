@@ -1,11 +1,12 @@
 package ex2.complementary_strand;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 abstract class ComplementaryStrand {
 
-    private Map<String, String> nucleotidesMapping = new HashMap<>();
+    private final Map<String, String> nucleotidesMapping = new HashMap<>();
 
     public ComplementaryStrand() {
         this.nucleotidesMapping.put("A", "T");
@@ -20,6 +21,6 @@ abstract class ComplementaryStrand {
         }
         return builder.toString();
     }
-    abstract void complementaryStrandFromDir(String inputDir, String outDir);
+    abstract void complementaryStrandFromDir(String inputDir, String outDir) throws IOException;
 
 }
