@@ -5,12 +5,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-abstract public class UtilReader<T> {
-    public void print(List<T> result) {
-        result.forEach(System.out::println);
-    }
-
-    public List<String> readFile(String filename) {
+abstract public class UtilReader {
+    public static List<String> readFile(String filename) {
         List<String> result = new ArrayList<>();
         BufferedReader reader;
         try {
@@ -27,11 +23,15 @@ abstract public class UtilReader<T> {
         return result;
     }
 
-    public List<String> listFiles(String dir) {
+    public static List<String> listFiles(String dir) {
         return Stream.of(Objects.requireNonNull(new File(dir).listFiles()))
                 .filter(file -> !file.isDirectory())
                 .map(File::getName)
                 .sorted()
                 .collect(Collectors.toList());
+    }
+
+    public static boolean writeFileTo(String filename, List<String> content) {
+        return false;
     }
 }

@@ -1,5 +1,6 @@
 package ex1.find_name;
 
+import jdk.jshell.execution.Util;
 import util.UtilReader;
 
 import java.util.ArrayList;
@@ -12,10 +13,10 @@ public class ConcurrentFinder extends Finder {
     @Override
     public List<FindResult> find(String name) {
         List<FindResult> result = new ArrayList<>();
-        List<String> fileNames = this.listFiles("bin/");
+        List<String> fileNames = UtilReader.listFiles("bin/");
         ExecutorService executor = Executors.newFixedThreadPool(10);
         for (String fileName : fileNames) {
-            List<String> names = this.readFile("bin/" + fileName);
+            List<String> names = UtilReader.readFile("bin/" + fileName);
             executor.execute(() -> {
                 int line = 0;
                 for (String currentName : names) {
