@@ -10,9 +10,9 @@ public class SequentialFinder extends Finder {
     @Override
     public List<FindResult> find(String name) {
         List<FindResult> result = new ArrayList<>();
-        List<String> fileNames = UtilReader.listFiles("bin/");
+        List<String> fileNames = UtilReader.listFiles("bin/names/");
         for (String fileName : fileNames) {
-            List<String> names = UtilReader.readFile("bin/" + fileName);
+            List<String> names = UtilReader.readFile("bin/names/" + fileName);
             int line = 0;
             for (String currentName : names) {
                 line++;
