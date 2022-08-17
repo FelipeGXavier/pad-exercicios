@@ -31,7 +31,7 @@ abstract public class UtilReader {
                 .collect(Collectors.toList());
     }
 
-    public static boolean writeFileTo(String filename, List<String> content) {
-        return false;
+    public static void writeFileTo(String filename, List<String> content) {
+
     }
 }
