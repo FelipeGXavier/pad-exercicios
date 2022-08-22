@@ -1,6 +1,5 @@
 package ex2.complementary_strand;
 
-import ex1.find_name.FindResult;
 import util.UtilReader;
 
 import java.io.IOException;
@@ -10,7 +9,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class ConcurrentComplementaryStrand extends ComplementaryStrand{
+public class ConcurrentComplementaryStrand extends ComplementaryStrand {
 
     @Override
     void complementaryStrandFromDir(String inputDir, String outDir) {
@@ -25,7 +24,7 @@ public class ConcurrentComplementaryStrand extends ComplementaryStrand{
                     complementaryTape.add(this.getComplementaryStrand(nucleotides));
                 }
                 try {
-                    UtilReader.writeFileTo(outDir + "/" + fileName, complementaryTape);
+                    UtilReader.writeFileTo(outDir + "/c_" + fileName, complementaryTape);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

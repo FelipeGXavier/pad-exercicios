@@ -1,6 +1,5 @@
 package ex2.complementary_strand;
 
-import ex1.find_name.FindResult;
 import util.UtilReader;
 
 import java.io.IOException;

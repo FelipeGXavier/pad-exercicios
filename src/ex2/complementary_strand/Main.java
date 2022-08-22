@@ -10,7 +10,7 @@ public class Main {
         sequentialComplementaryStrand.complementaryStrandFromDir("bin/dna/in", "bin/dna/out");
 
         // Concurrent
-        ComplementaryStrand concurrentComplementaryStrand = new SequentialComplementaryStrand();
+        ComplementaryStrand concurrentComplementaryStrand = new ConcurrentComplementaryStrand();
         concurrentComplementaryStrand.complementaryStrandFromDir("bin/dna/in", "bin/dna/out");
     }
 }
